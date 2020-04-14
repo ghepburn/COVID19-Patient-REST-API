@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="container">
+	<div class="bg-light m-5 p-5">
+		<div class="pb-4">
+
+			<h3 class="text-center mb-4">API Documentation</h3>
+			<h5 class="pb-4"><strong>PATIENTS</strong></h5>
+			
+			<div class="p-2">
+
+				<div class="mb-4">
+					<p class="border-bottom mb-4"><strong>GET</strong></p>
+					<div class="row">
+						<p class="col-3">Get All Patients:</p>
+						<p class="col">"/api/patients/patients?api_key=APIKEYHERE"</p>
+					</div>
+					<div class="text-center p-3" style="color:green;">
+						<p>/api/patients/patients?api_key=f4g45g8g4fssf45fg8</p>
+					</div>
+					<div class="row">
+						<p class="col-3">Get One Patients:</p>
+						<p class="col">"/api/patients/patient_id?api_key=APIKEYHERE"</p>
+					</div>
+					<div class="text-center p-3" style="color:green;">
+						<p>/api/patients/1?api_key=f4g45g8g4fssf45fg8</p>
+					</div>
+					<div class="row">
+						<p class="col-3">Get All Patients From A Single Country:</p>
+						<p class="col">"/api/patients/country?api_key=APIKEYHERE"</p>
+					</div>
+					<div class="text-center p-3" style="color:green;">
+						<p>/api/patients/Canada?api_key=f4g45g8g4fssf45fg8</p>
+					</div>
+				</div>
+				
+				<div class="mb-4">
+					<p class="border-bottom mb-2"><strong>PUT</strong></p>
+					<div class="row">
+						<p class="col-3">Update One Patient:</p>
+						<p class="col">"/api/patients/patient_id?api_key=APIKEYHERE"</p>
+					</div>
+					<div class="text-center p-3" style="color:green;">
+						<p>/api/patients/1?api_key=f4g45g8g4fssf45fg8</p>
+						<p>{ 'sex':'male', 'birth_year:'1990', 'country':'Canada', 'infection_reason':'travel', 'confirmed_date': '20200101', 'deceased_date': '20200320' }</p>
+					</div>
+				</div>
+
+				<div class="mb-4">
+					<p class="border-bottom mb-2"><strong>POST</strong></p>
+					<div class="row">
+						<p class="col-3">Add One Patients:</p>
+						<p class="col">"/api/patients/add?api_key=APIKEYHERE"</p>
+					</div>
+					<div class="text-center p-3" style="color:green;">
+						<p>/api/patients/add?api_key=f4g45g8g4fssf45fg8</p>
+						<p>{ 'sex':'male', 'birth_year:'1990', 'country':'Canada', 'infection_reason':'travel', 'confirmed_date': '20200101', 'deceased_date': '20200320' }</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="p-2">
+				<p class="border-bottom mb-2"><strong>MANUAL</strong></p>
+				<div class="row">
+					<p class="col-3">Bulk Upload:</p>
+					<p class="col">"/api/patients/upload"</p>
+				</div>
+				<p class="text-center pb-3" style="color:green;">Registered users can upload data in bulk from a CSV file.  CSV file headers must be specified correctly.</p>
+				<div class="row">
+					<p class="col-3">Add Single Patient:</p>
+					<p class="col">"/api/patients"</p>
+				</div>
+				<p class="text-center pb-3" style="color:green;">Registered users can use a form to input new patient data.</p>		
+				<div class="row">
+					<p class="col-3">View All Patients:</p>
+					<p class="col">"/api/patients"</p>
+				</div>
+				<p class="text-center pb-3" style="color:green;">Registered users can view all patient data here.</p>			
+			</div>
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}

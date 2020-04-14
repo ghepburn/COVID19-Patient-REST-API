@@ -1,0 +1,148 @@
+{% extends 'layout.html' %}
+{% block content %}
+	<div class="container">
+		<div class="p-4 mt-4 mb-4 border-bottom">
+			<div class="row">
+				<div class="col">
+					<h5>ID</h5>
+				</div>
+				<div class="col">
+					<h5>Sex</h5>
+				</div>
+				<div class="col">
+					<h5>Birth Year</h5>
+				</div>
+				<div class="col">
+					<h5>Country</h5>
+				</div>
+				<div class="col">
+					<h5>Infection Reason</h5>
+				</div>
+				<div class="col">
+					<h5>Confirmed Date</h5>
+				</div>
+				<div class="col">
+					<h5>Deceased Date</h5>
+				</div>
+			</div>	
+			{% for patient in patients.items %}	
+				<div class="row">
+						<p class="col">{{patient.patient_id}}</p>
+						<p class="col">{{patient.sex}}</p>
+						<p class="col">{{patient.birth_year}}</p>
+						<p class="col">{{patient.country}}</p>
+						<p class="col">{{patient.infection_reason}}</p>
+						<p class="col">{{patient.confirmed_date}}</p>
+						<p class="col">{{patient.deceased_date}}</p>
+				</div>
+			{% endfor %}
+
+			{% for page_num in patients.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=3)%}
+				{% if page_num %}
+					{% if patients.page == page_num %}
+						<a class="btn btn-secondary mb-4 mr-auto" href="{{ url_for('listPatients', page=page_num) }}">{{ page_num }}</a>
+					{% else %}
+						<a class="btn btn-outline-secondary mb-4 mr-auto" href="{{ url_for('listPatients', page=page_num) }}">{{ page_num }}</a>
+					{% endif %}
+				{% else %}
+				
+				{% endif %}
+			{% endfor %}
+		</div>
+
+		<div>
+		<div class="m-5">
+			<div class="bg-light m-2 p-4">
+				<form method="POST", action="">
+					{{ form.hidden_tag() }}
+					<fieldset class="form-group">
+						<legend class="border-bottom mb-4">Add A Patient</legend>
+						<div class="form-group">
+							{{ form.sex.label(class="form-control-label") }}
+							{% if form.sex.errors %}
+								{{ form.sex(class="form-control form-control-lg is-invalid") }}
+								<div>
+									{% for error in form.sex.errors %}
+										<span>{{ error }}</span>
+									{% endfor %}
+								</div>
+							{% else %}
+								{{ form.sex(class="form-control form-control-lg") }}
+							{% endif %}
+						</div>
+						<div class="form-group">
+							{{ form.birth_year.label(class="form-control-label") }}
+							{% if form.birth_year.errors %}
+								{{ form.birth_year(class="form-control form-control-lg is-invalid") }}
+								<div>
+									{% for error in form.birth_year.errors %}
+										<span>{{ error }}</span>
+									{% endfor %}
+								</div>
+							{% else %}
+								{{ form.birth_year(class="form-control form-control-lg") }}
+							{% endif %}
+						</div>
+						<div class="form-group">
+							{{ form.country.label(class="form-control-label") }}
+							{% if form.country.errors %}
+								{{ form.country(class="form-control form-control-lg is-invalid") }}
+								<div>
+									{% for error in form.country.errors %}
+										<span>{{ error }}</span>
+									{% endfor %}
+								</div>
+							{% else %}
+								{{ form.country(class="form-control form-control-lg") }}
+							{% endif %}
+						</div>
+						<div class="form-group">
+							{{ form.infection_reason.label(class="form-control-label") }}
+							{% if form.infection_reason.errors %}
+								{{ form.infection_reason(class="form-control form-control-lg is-invalid") }}
+								<div>
+									{% for error in form.infection_reason.errors %}
+										<span>{{ error }}</span>
+									{% endfor %}
+								</div>
+							{% else %}
+								{{ form.infection_reason(class="form-control form-control-lg") }}
+							{% endif %}
+						</div>
+						<div class="form-group">
+							{{ form.confirmed_date.label(class="form-control-label") }}
+							{% if form.confirmed_date.errors %}
+								{{ form.confirmed_date(class="form-control form-control-lg is-invalid") }}
+								<div>
+									{% for error in form.confirmed_date.errors %}
+										<span>{{ error }}</span>
+									{% endfor %}
+								</div>
+							{% else %}
+								{{ form.confirmed_date(class="form-control form-control-lg") }}
+							{% endif %}
+						</div>
+						<div class="form-group">
+							{{ form.deceased_date.label(class="form-control-label") }}
+							{% if form.deceased_date.errors %}
+								{{ form.deceased_date(class="form-control form-control-lg is-invalid") }}
+								<div>
+									{% for error in form.deceased_date.errors %}
+										<span>{{ error }}</span>
+									{% endfor %}
+								</div>
+							{% else %}
+								{{ form.deceased_date(class="form-control form-control-lg") }}
+							{% endif %}
+						</div>
+					</fieldset>
+					<div class="form-group">
+						{{ form.submit(class="btn btn-info") }}
+					</div>
+				</form>	
+			</div>
+		</div>
+
+	</div>
+
+{% endblock %}

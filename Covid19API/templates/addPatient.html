@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block content %}
+	<div>
+		<br><br>
+		<div class="text-center">
+			<h1 class="">New Diagnosis</h1>
+			<br>
+			<div>
+				<form method="POST">\
+					<div class="row">
+						<label>Name: </label>
+						<input type="text" name="patientName">
+					</div>
+					<div class="row">
+						<label>Age: </label>
+						<input type="text" name="patientAge">
+					</div>
+					<div class="row">
+						<label>Infection Date: </label>
+						<input type="text" name="patientInfectionDate">
+					</div>
+					<br>
+					<input type="submit" Value="Submit">
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
