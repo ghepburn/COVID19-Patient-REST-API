@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, IntegerField, DateField, FileField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, Optional, ValidationError
-from Covid19API.models import User
+from covid19api.models import User
 from flask import request
 import pandas as pd
 

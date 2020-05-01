@@ -6,7 +6,7 @@ import pandas as pd
 
 from .models import Patient, User, Api_Key
 from .forms import RegistrationForm, LoginForm, PostForm, UploadForm
-from Covid19API import app, bcrypt, db
+from covid19api import app, bcrypt, db
 from .serializers import PatientSerializer
 
 

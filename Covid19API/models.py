@@ -1,4 +1,4 @@
-from Covid19API import db, login_manager, bcrypt
+from covid19api import db, login_manager, bcrypt
 from flask_login import UserMixin
 import datetime as dt
 import requests
