@@ -1,0 +1,2 @@
+sex,birth_year,country,infection_reason,confirmed_date,deceased_date
+male,1995,CA,Travel,20200501,20200505

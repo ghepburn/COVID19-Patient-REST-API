@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block content %}
+	<div>
+		<br><br>
+		<div class="text-center">
+			<h1 class="">Patient</h1>
+			<br>
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<h5>ID</h5>
+					</div>
+					<div class="col">
+						<h5>Sex</h5>
+					</div>
+					<div class="col">
+						<h5>Birth Year</h5>
+					</div>
+					<div class="col">
+						<h5>Country</h5>
+					</div>
+					<div class="col">
+						<h5>Infection Reason</h5>
+					</div>
+					<div class="col">
+						<h5>Confirmed Date</h5>
+					</div>
+					<div class="col">
+						<h5>Deceased Date</h5>
+					</div>
+				</div>		
+				<br>
+				<div class="row">
+						<a class="col" href="/get_patient/{{patient.id}}">{{patient.patient_id}}</a>
+						<p class="col">{{patient.sex}}</p>
+						<p class="col">{{patient.birth_year}}</p>
+						<p class="col">{{patient.country}}</p>
+						<p class="col">{{patient.infection_reason}}</p>
+						<p class="col">{{patient.confirmed_date}}</p>
+						<p class="col">{{patient.deceased_date}}</p>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

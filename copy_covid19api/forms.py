@@ -39,11 +39,5 @@ class PostForm(FlaskForm):
 	submit = SubmitField('Add')
 
 class UploadForm(FlaskForm):
-	file = FileField('File', validators=[DataRequired()])
+	file = FileField('File')
 	submit=SubmitField('Upload')
-
-class AdminForm(FlaskForm):
-	username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
-	role = StringField('Role')
-	account_type = StringField('Account Type')
-	submit = SubmitField('Modify')

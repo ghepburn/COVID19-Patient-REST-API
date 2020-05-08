@@ -1,4 +1,32 @@
-.MyTitle {
-	align-content: center;
-	color: red;
+li {
+	list-style-type: none;
+}
+.bold {
+	font-weight: bold;
+}
+.card {
+	position: relative;
+	width: 100%;
+	margin: 20px;
+	padding: 10px;
+	align-items: center;
+}
+.card p {
+	font-weight: bold;
+}
+/*.btn {
+	position: relative;
+	width: 50%;
+}*/
+.row {
+	flex-flow: row;
+	flex-direction: row;
+	position: relative;
+	align-content: space-around;
+	padding: 20px;
+}
+.card-title {
+	width: 50%;
+	align-items: center;
+	border-bottom: solid;
 }

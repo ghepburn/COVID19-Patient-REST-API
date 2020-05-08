@@ -3,7 +3,6 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="static/style.css">
 </head>
 <body class="bg-success">
 
@@ -13,7 +12,7 @@
 			<li class="nav-item p-3">
 				<a href="{{ url_for('documentation') }}" style="color: black;">Documentation</a>
 			</li>
-		{% if session.get("USERNAME") %}
+		{% if current_user.is_authenticated %}
 			<li class="nav-item p-3">
 				<a href="{{ url_for('listPatients') }}" style="color: black;">API</a>
 			</li>
@@ -28,7 +27,7 @@
 				<a href="{{ url_for('login') }}" style="color: black;">Login</a>
 			</li>
 			<li class="nav-item p-3">
-				<a href="{{ url_for('membership') }}" style="color: black;">Register</a>
+				<a href="{{ url_for('register') }}" style="color: black;">Register</a>
 			</li>
 		{% endif %}
 	</ul>

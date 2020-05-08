@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block content %}
+	<div class="container">
+		<h3 class="border-bottom m-4 pt-5">Registration Options</h3>
+		<div class="row">
+			<div class="card col">
+				<h5 class="border-bottom mb-3">Free</h5>
+				<p class="text-center border-top p-3">Limited to three api calls per day. No access to POST, DELETE or PUT Data.</p>
+				<p class="pb-1">Cost: $0.00</p>
+				<a class="btn btn-info" href="/register/Free-Account">Register</a>
+			</div>
+			<div class="card col">
+				<h5 class="border-bottom mb-3">Full-Access</h5>
+				<p class="text-center p-3">Ulimited API calls.  Full access to all available API methods including bulk upload.</p>
+				<p class="pb-1">Cost: $1.00/Month</p>
+				<a class="btn btn-info" href="/register/Full-Access">Register</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}
