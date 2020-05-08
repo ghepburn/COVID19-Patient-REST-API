@@ -1,5 +1,5 @@
 # Professional-Flask-API
-This is a REST API designed to provide data on COVID-19 patients. Registered users are provided a one-time api key which they can use to make calls remotley. The API is secured via user login and/or api key authentication, and url routes secured via authorization requirements.
+This is a REST API designed to provide data on COVID-19 patients. It incorporates complete authorization and authentication.
 
 # Authentication
 API includes a full user login system which was built without any third aprty libraries. Upon login, the website session will hold the user information for a few hours.  During that time, the user is recignized by the server and can access the stored data.
